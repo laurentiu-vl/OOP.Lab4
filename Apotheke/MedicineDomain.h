@@ -1,47 +1,48 @@
 #pragma once
-#include <iostream>
 #include <string>
-
+#include <vector>
 using namespace std;
 
-class MedikamentDomain
+class Medicine
 {
-	private:
-		string name;
+private:
 
-		double konzentration;
-		
-		double menge;
-		
-		double preis;
+	string name;
+	double concentration;
+	double quantity;
+	double price;
 
-	public: /// Information about Drugs
-		MedikamentDomain();
+public:
 
-		/// Constructor
-		MedikamentDomain(string, double, double, double);
+	Medicine();
 
-		/// return the name as string
-		string getName();
+	~Medicine();
 
-		/// set a new name as string
-		void setName(string);
+	Medicine(string name, double concentration, double quantity, double price);
+	
+	//getters
+	string get_name();
 
-		/// return the concentration as double
-		double getKonzentration();
+	double get_concentration();
 
-		/// set a new concentration as double
-		void setKonzentration(double);
+	double get_quantity();
 
-		/// return the quantity as double
-		double getMenge();
+	double get_price();
 
-		/// set a new quantity as double
-		void setMenge(double);
+	//setters
+	void set_name(string n);
 
-		/// return the price as double
-		double getPreis();
+	void set_concentration(double c);
 
-		/// set a new price as double
-		void setPreis(double);
+	void set_quantity(double q);
+
+	void set_price(double p);
+
+	//increse quantity
+	void add_quantity(double q);
+
+	bool operator< (Medicine temp) const;
+
+	bool operator==(Medicine temp) const;
+
 };

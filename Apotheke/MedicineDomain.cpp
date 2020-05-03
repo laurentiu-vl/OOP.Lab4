@@ -1,60 +1,80 @@
-#include "MedikamentDomain.h"
+#include "Repository.h"
+#include "MedicineDomain.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-/*
-MedikamentDomain::MedikamentDomain()
+Medicine::Medicine(string name, double concentration, double quantity, double price)
 {
-
-}
-*/
-
-MedikamentDomain::MedikamentDomain(string nname, double nkonzentration, double nmenge, double npreis)
-{
-	this->name = nname;
-	this->menge = nmenge;
-	this->konzentration = nkonzentration;
-	this->preis = npreis;
+	this->name = name;
+	this->concentration = concentration;
+	this->price = price;
+	this->quantity = quantity;
 }
 
-string MedikamentDomain::getName()
+Medicine::Medicine()
 {
-	return this->name;
+
+};
+
+Medicine::~Medicine()
+{
+
+};
+
+string Medicine::get_name()
+{ 
+	return name; 
 }
 
-double MedikamentDomain::getKonzentration()
+double Medicine::get_concentration()
 {
-	return this->konzentration;
+	return concentration;
 }
 
-double MedikamentDomain::getMenge()
+double Medicine::get_quantity()
 {
-	return this->menge;
+	return quantity;
 }
 
-double MedikamentDomain::getPreis()
+double Medicine::get_price()
 {
-	return this->preis;
+	return price;
 }
 
-void MedikamentDomain::setName(string xname)
+
+void Medicine::set_name(string n)
 {
-	this->name = xname;
+	name = n;
 }
 
-void MedikamentDomain::setKonzentration(double xkonzentration)
+void Medicine::set_concentration(double c)
 {
-	this->konzentration = xkonzentration;
+	concentration = c;
 }
 
-void MedikamentDomain::setMenge(double xmenge)
+void Medicine::set_quantity(double q)
 {
-	this->menge = xmenge;
+	quantity = q;
 }
 
-void MedikamentDomain::setPreis(double xpreis)
+void Medicine::set_price(double p)
 {
-	this->preis = xpreis;
+	price = p;
+}
+
+void Medicine::add_quantity(double q)
+{
+	quantity += q;
+}
+
+bool Medicine::operator< (Medicine temp) const
+{
+	return (this->name < temp.get_name());
+}
+
+bool Medicine::operator==(Medicine temp) const
+{
+	return ((this->name == temp.get_name()) && (this->concentration == temp.get_concentration()));
 }

@@ -1,16 +1,9 @@
+#include "MedicineDomain.h"
 #include "UI.h";
 #include <iostream>
-#include "MedikamentDomain.h"
+
 
 using namespace std;
-
-UI::UI()
-{
-}
-
-UI::UI()
-{
-}
 
 void UI::menu()
 {
@@ -27,32 +20,32 @@ void UI::menu()
 		<< "7.List all medicines based on price (small to big)\n"
 		<< "8.Quit\n";
 
-	while (opt != 8)
+	while (option != 8)
 	{
-		cin >> opt;
+		cin >> option;
 
-		if (opt == 1)
-			Controller::add_med();
+		if (option == 1)
+			add();
 
-		else if (opt == 2)
-			Controller::delete_med();
+		else if (option == 2)
+			deletes();
 
-		else if (opt == 3)
-			Controller::update_med();
+		else if (option == 3)
+			update();
+/*
+		else if (option == 4)
+			//list_meds();
+*/
+		else if (option == 5)
+			search_by_name2();
 
-		else if (opt == 4)
-			Controller::list_meds();
-
-		else if (opt == 5)
-			Controller::search_med_name();
-
-		else if (opt == 6)
-			Controller::search_med_quantity();
-
-		else if (opt == 7)
-			Controller::group_by_price();
-
-		else if (opt == 8)
+		else if (option == 6)
+			search_by_quantity2();
+/*
+		else if (option == 7)
+			group_by_price();
+*/
+		else if (option == 8)
 			break;
 
 		else
