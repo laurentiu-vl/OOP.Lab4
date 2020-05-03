@@ -140,13 +140,13 @@
   <ItemGroup>
     <ClCompile Include="Controller.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MedikamentDomain.cpp" />
+    <ClCompile Include="MedicineDomain.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller.h" />
-    <ClInclude Include="MedikamentDomain.h" />
+    <ClInclude Include="MedicineDomain.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
