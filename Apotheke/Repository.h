@@ -1,5 +1,6 @@
 #pragma once
 #include "MedicineDomain.h"
+#include <string.h>
 #include <vector>
 
 using namespace std;
@@ -15,22 +16,27 @@ public:
 	~Repository();
 
 	//adds a medicine to the repository
-	void add_med(string name, double concentration, double quantity, double price);
+	bool add_med(string name, double concentration, double quantity, double price);
 
 	//deletes a medicine from the repository
 	void delete_med(string name, double concentration);
 
-	//update a medicine from the repository
+	//update the price of a medicine from the repository
 	void update_med(string name, double concentration, double price);
 
+	//return element from repository based on name and concentration
 	Medicine get_element(string name, double concentration);
 
-/*
-	bool search_by_name(string Z);
+	//SEARCH ALL MEDS BY FULL NAME OR A PART OF THEIR NAME
+	bool search_by_name(string find);
 
-	bool search_by_quantity(int QQQQ);
+	//SEARCH ALL MEDS WITH A QUANTITY LOWER THAN ONE GIVEN
+	bool search_by_quantity(double less_than);
 
-	bool group_by_price();
-	*/
+	//LIST ALL MEDS BY PRICE(low to high)
+	Repository group_by_price();
+
+	//LIST ALL MEDS
+	void list_all();
 };
 

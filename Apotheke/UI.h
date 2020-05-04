@@ -1,9 +1,12 @@
 #pragma once
 #include "Controller.h"
-class UI: public Controller
+class UI: protected Controller
 {
 public:
 
-	void menu();
+	UI();
 
+	~UI();
+
+	void menu();
 };

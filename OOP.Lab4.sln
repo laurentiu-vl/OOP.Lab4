@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Apotheke", "Apotheke\Apotheke.vcxproj", "{46B23D66-1266-4608-9C83-19B96D8378CF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tests", "Tests\Tests.vcxproj", "{17562263-08F5-46CF-885C-DC9FB350D768}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{46B23D66-1266-4608-9C83-19B96D8378CF}.Release|x64.Build.0 = Release|x64
 		{46B23D66-1266-4608-9C83-19B96D8378CF}.Release|x86.ActiveCfg = Release|Win32
 		{46B23D66-1266-4608-9C83-19B96D8378CF}.Release|x86.Build.0 = Release|Win32
+		{17562263-08F5-46CF-885C-DC9FB350D768}.Debug|x64.ActiveCfg = Debug|x64
+		{17562263-08F5-46CF-885C-DC9FB350D768}.Debug|x64.Build.0 = Debug|x64
+		{17562263-08F5-46CF-885C-DC9FB350D768}.Debug|x86.ActiveCfg = Debug|Win32
+		{17562263-08F5-46CF-885C-DC9FB350D768}.Debug|x86.Build.0 = Debug|Win32
+		{17562263-08F5-46CF-885C-DC9FB350D768}.Release|x64.ActiveCfg = Release|x64
+		{17562263-08F5-46CF-885C-DC9FB350D768}.Release|x64.Build.0 = Release|x64
+		{17562263-08F5-46CF-885C-DC9FB350D768}.Release|x86.ActiveCfg = Release|Win32
+		{17562263-08F5-46CF-885C-DC9FB350D768}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

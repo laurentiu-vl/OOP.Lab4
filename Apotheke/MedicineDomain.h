@@ -41,8 +41,11 @@ public:
 	//increse quantity
 	void add_quantity(double q);
 
+	//operators for sorting
 	bool operator< (Medicine temp) const;
 
 	bool operator==(Medicine temp) const;
 
+	//write a medicine on screen
+	void return_string();
 };

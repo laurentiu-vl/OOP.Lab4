@@ -8,6 +8,6 @@ int main()
 {
 	Repository repos;
 	Controller ctrl(repos);
-	UI cons;
-	cons.menu();
+	UI ui;
+	ui.menu();
 }
