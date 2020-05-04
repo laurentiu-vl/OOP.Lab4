@@ -7,9 +7,13 @@ using namespace std;
 
 class Repository
 {
-public:
+private:
 
 	vector <Medicine> meds;
+
+public:
+
+	//vector <Medicine> meds;
 
 	Repository();
 

@@ -107,6 +107,31 @@ namespace Tests
 			Assert::AreEqual(2000.0, med.get_quantity());
 		}
 
+		TEST_METHOD(AddTest2)
+		{
+			auto repos = new Repository;
+
+			bool useless = repos->add_med("Paracetamol", 50, 1000, 5);
+			Medicine med = repos->get_element("Paracetamol", 50);
+			useless = repos->add_med("Paracetamol", 50, 1000, 5);
+			med = repos->get_element("Paracetamol", 50);
+			Assert::AreEqual(1000.0, med.get_quantity());
+
+			bool useless = repos->add_med("Euthyrox", 100, -360, 0);
+			Medicine med = repos->get_element("Euthyrox", 100);
+			useless = repos->add_med("Euthyrox", 100, -360, 0);
+			med = repos->get_element("Euthyrox", 100);
+			Assert::AreEqual(100.0, med.get_quantity());
+
+			for (int i = 0; i < repos->med.size(); i++)
+			{
+				if (i == 1)
+				{
+					Assert::AreEqual(100.0, med[i].get_quantity());
+				}
+			}
+		}
+
 		TEST_METHOD(DeleteTest)
 		{
 			auto repos = new Repository;

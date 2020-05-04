@@ -39,7 +39,7 @@ void Controller::add()
 	cout << "Price: ";
 	cin >> p;
 
-	bool cases = add_med(n, c, q, p);
+	bool cases = this->repos.add_med(n, c, q, p);
 
 	int option = -1;
 
@@ -54,12 +54,12 @@ void Controller::add()
 
 		if (option == 1 && cases == true)
 		{
-			delete_med(n, c);
+			this->repos.delete_med(n, c);
 			break;
 		}
 		else if (option == 1 && cases == false)
 		{
-			bool useless = add_med(n, c, -q, p);
+			bool useless = this->repos.add_med(n, c, -q, p);
 			break;
 		}
 		else if (option == 2)

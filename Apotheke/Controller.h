@@ -1,6 +1,6 @@
 #pragma once
 #include "Repository.h"
-class Controller: public Repository
+class Controller
 {
 private:
 	Repository repos;
