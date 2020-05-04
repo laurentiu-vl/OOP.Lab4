@@ -76,6 +76,11 @@ void Medicine::add_quantity(double q)
 	quantity += q;
 }
 
+void Medicine::minus_quantity(double q1)
+{
+	quantity -= q1;
+}
+
 bool Medicine::operator< (Medicine temp) const
 {
 	return (this->name < temp.get_name());

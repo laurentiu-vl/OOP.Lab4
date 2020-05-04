@@ -41,6 +41,8 @@ public:
 	//increse quantity
 	void add_quantity(double q);
 
+	void minus_quantity(double q1);
+
 	//operators for sorting
 	bool operator< (Medicine temp) const;
 

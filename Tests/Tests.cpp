@@ -23,7 +23,69 @@ namespace Tests
 			Assert::AreEqual(string("Euthyrox"), med->get_name());
 		}
 
+		TEST_METHOD(Q1)
+		{
+			auto med = new Medicine("Euthyrox", 100, 360, 0);
+			Assert::AreEqual(100.0, med->get_concentration());
+			Assert::AreEqual(360.0, med->get_quantity());
+			Assert::AreEqual(0.0, med->get_price());
+			Assert::AreEqual(string("Euthyrox"), med->get_name());
+
+			med->minus_quantity(20);
+			Assert::AreEqual(340.0, med->get_quantity());
+		}
+
+		TEST_METHOD(Q2)
+		{
+			auto med = new Medicine("Euthyrox", 100, 360, 0);
+			Assert::AreEqual(100.0, med->get_concentration());
+			Assert::AreEqual(360.0, med->get_quantity());
+			Assert::AreEqual(0.0, med->get_price());
+			Assert::AreEqual(string("Euthyrox"), med->get_name());
+
+			med->minus_quantity(22.8);
+			Assert::AreEqual(337.2, med->get_quantity());
+		}
+
+		TEST_METHOD(Q3)
+		{
+			auto med = new Medicine("Euthyrox", 100, 360, 0);
+			Assert::AreEqual(100.0, med->get_concentration());
+			Assert::AreEqual(360.0, med->get_quantity());
+			Assert::AreEqual(0.0, med->get_price());
+			Assert::AreEqual(string("Euthyrox"), med->get_name());
+
+			med->minus_quantity(390.0);
+			Assert::AreEqual(-30.0, med->get_quantity());
+		}
+
+		TEST_METHOD(A1)
+		{
+			auto med = new Medicine("Euthyrox", 100, 360, 0);
+			Assert::AreEqual(100.0, med->get_concentration());
+			Assert::AreEqual(360.0, med->get_quantity());
+			Assert::AreEqual(0.0, med->get_price());
+			Assert::AreEqual(string("Euthyrox"), med->get_name());
+
+			med->add_quantity(140.0);
+			Assert::AreEqual(500.0, med->get_quantity());
+		}
+
+		TEST_METHOD(A2)
+		{
+			auto med = new Medicine("Euthyrox", 100, -360, 0);
+			Assert::AreEqual(100.0, med->get_concentration());
+			Assert::AreEqual(-360.0, med->get_quantity());
+			Assert::AreEqual(0.0, med->get_price());
+			Assert::AreEqual(string("Euthyrox"), med->get_name());
+
+			med->add_quantity(400.0);
+			Assert::AreEqual(40.0, med->get_quantity());
+		}
+
 	};
+
+		
 
 	TEST_CLASS(RepositoryClass)
 	{
@@ -57,7 +119,6 @@ namespace Tests
 			Assert::AreEqual(string(""), med.get_name());
 
 		}
-
 		TEST_METHOD(UpdateTest)
 		{
 			auto repos = new Repository;
