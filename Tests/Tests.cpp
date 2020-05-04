@@ -107,7 +107,7 @@ namespace Tests
 			Assert::AreEqual(2000.0, med.get_quantity());
 		}
 
-		/*TEST_METHOD(AddTest2)
+		/*TEST_METHOD(AddTest2) /// adaug doua medicine si verific cantitatea celei de-a doua daca este corecta
 		{
 			auto repos = new Repository;
 
@@ -118,20 +118,21 @@ namespace Tests
 			Assert::AreEqual(1000.0, med.get_quantity());
 
 			bool useless = repos->add_med("Euthyrox", 100, -360, 0);
-			Medicine med = repos->get_element("Euthyrox", 100);
+			Medicine med1 = repos->get_element("Euthyrox", 100);
 			useless = repos->add_med("Euthyrox", 100, -360, 0);
-			med = repos->get_element("Euthyrox", 100);
-			Assert::AreEqual(100.0, med.get_quantity());
+			med1 = repos->get_element("Euthyrox", 100);
+			Assert::AreEqual(100.0, med1.get_quantity());
 
-			for (int i = 0; i < 2; i++)
+			for (int i = 0; i < repos->get_medsize(); i++) // de verificat aici
 			{
 				if (i == 1)
 				{
 					Assert::AreEqual(100.0, med.get_quantity());
 				}
 			}
-		}*/
-
+			
+		}
+		*/
 		TEST_METHOD(DeleteTest)
 		{
 			auto repos = new Repository;

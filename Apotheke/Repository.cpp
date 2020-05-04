@@ -10,6 +10,11 @@ Repository::Repository() {}
 
 Repository::~Repository() {}
 
+void Repository::add_inmeds(int x)
+{
+	//meds.push_back(x);
+}
+
 bool Repository::add_med(string name, double concentration, double quantity, double price)
 {
 	int i;

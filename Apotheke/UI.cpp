@@ -51,8 +51,8 @@ void UI::menu()
 		else if (option == 6)
 			search_by_quantity2();
 
-		else if (option == 7)
-			group_by_price2();
+		//else if (option == 7)
+			//group_by_price2();
 
 		else if (option == 8)
 			break;

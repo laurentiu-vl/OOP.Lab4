@@ -14,7 +14,11 @@ private:
 public:
 
 	//vector <Medicine> meds;
-
+	
+	int get_medsize() { return meds.size(); } /// de verificat aici
+	
+	void add_inmeds(int x); /// de veririficat aici
+	
 	Repository();
 
 	~Repository();
