@@ -41,6 +41,7 @@ namespace Tests
 			Assert::AreEqual(5.0, med.get_price());
 
 			useless = repos->add_med("Paracetamol", 50, 1000, 5);
+			med = repos->get_element("Paracetamol", 50);
 			Assert::AreEqual(2000.0, med.get_quantity());
 		}
 
@@ -94,7 +95,7 @@ namespace Tests
 			auto repos = new Repository;
 
 			bool useless = repos->add_med((string)"Vitamina C", 90, 5000, 2);
-			Assert::IsTrue(repos->search_by_quantity(1001));
+			Assert::IsFalse(repos->search_by_quantity(1001));
 
 			useless = repos->add_med("Paracetamol", 50, 1000, 5);
 
