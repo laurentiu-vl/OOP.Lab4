@@ -42,8 +42,8 @@ void UI::menu()
 		else if (option == 3)
 			update();
 
-		else if (option == 4)
-			list_all();
+		//else if (option == 4)
+			//list_all();
 
 		else if (option == 5)
 			search_by_name2();

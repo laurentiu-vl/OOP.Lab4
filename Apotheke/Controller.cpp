@@ -86,8 +86,8 @@ void Controller::deletes()
 	cout << "Concentration: ";
 	cin >> c;
 
-	Medicine temp = get_element(n, c);
-	delete_med(n, c);
+	Medicine temp = this->repos.get_element(n, c);
+	this->repos.delete_med(n, c);
 
 	int option = -1;
 
@@ -101,7 +101,7 @@ void Controller::deletes()
 
 		if (option == 1)
 		{
-			add_med(temp.get_name(), temp.get_concentration(), temp.get_price(), temp.get_quantity());
+			this->repos.add_med(temp.get_name(), temp.get_concentration(), temp.get_price(), temp.get_quantity());
 			break;
 		}
 		else if (option == 2)
@@ -132,8 +132,8 @@ void Controller::update()
 	cout << "New price: ";
 	cin >> p;
 
-	Medicine temp = get_element(n, c);
-	update_med(n, c, p);
+	Medicine temp = this->repos.get_element(n, c);
+	this->repos.update_med(n, c, p);
 
 	int option = -1;
 
@@ -146,7 +146,7 @@ void Controller::update()
 		cin >> option;
 		if (option == 1)
 		{
-			update_med(n, c, temp.get_price());
+			this->repos.update_med(n, c, temp.get_price());
 			break;
 		}
 		else if (option == 2)
@@ -169,10 +169,10 @@ void Controller::search_by_name2()
 	cout << "Enter name:";
 	cin >> refrence;
 
-	bool exeption = search_by_name(refrence);
+	bool exeption = this->repos.search_by_name(refrence);
 	if (exeption == false)
 	{
-		list_all();
+		this->repos.list_all();
 	}
 }
 
@@ -185,15 +185,16 @@ void Controller::search_by_quantity2()
 	cout << "Enter <Quantity: ";
 	cin >> qtt;
 
-	bool useless = search_by_quantity(qtt);
+	bool useless = this->repos.search_by_quantity(qtt);
 }
-
+/*
 void Controller::group_by_price2()
 {
 	cout << "\nMEDS LISTED BY PRICE(low to high)";
-	Repository repos = group_by_price();
+	Repository repos = this->repos.group_by_price();
 	for (int i = 0; i < repos.meds.size(); i++)
 	{
 		repos.meds[i].return_string();
 	}
 }
+*/
