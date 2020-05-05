@@ -23,7 +23,7 @@ namespace Tests
 			Assert::AreEqual(string("Euthyrox"), med->get_name());
 		}
 
-		TEST_METHOD(Q1)
+		TEST_METHOD(Q1) 
 		{
 			auto med = new Medicine("Euthyrox", 100, 360, 0);
 			Assert::AreEqual(100.0, med->get_concentration());
@@ -107,32 +107,41 @@ namespace Tests
 			Assert::AreEqual(2000.0, med.get_quantity());
 		}
 
-		/*TEST_METHOD(AddTest2) /// adaug doua medicine si verific cantitatea celei de-a doua daca este corecta
+		TEST_METHOD(AddTest2) /// adaug doua medicine si verific cantitatea celei de-a doua daca este corecta
 		{
 			auto repos = new Repository;
 
 			bool useless = repos->add_med("Paracetamol", 50, 1000, 5);
-			Medicine med = repos->get_element("Paracetamol", 50);
-			useless = repos->add_med("Paracetamol", 50, 1000, 5);
-			med = repos->get_element("Paracetamol", 50);
+			Medicine med = repos->get_element("Paracetamol", 50);         
 			Assert::AreEqual(1000.0, med.get_quantity());
 
-			bool useless = repos->add_med("Euthyrox", 100, -360, 0);
+			bool useless1 = repos->add_med("Euthyrox", 100, -360, 0);
 			Medicine med1 = repos->get_element("Euthyrox", 100);
-			useless = repos->add_med("Euthyrox", 100, -360, 0);
-			med1 = repos->get_element("Euthyrox", 100);
-			Assert::AreEqual(100.0, med1.get_quantity());
+			Assert::AreEqual(-360.0, med1.get_quantity());
 
-			for (int i = 0; i < repos->get_medsize(); i++) // de verificat aici
+			for (int i = 0; i < repos->get_medsize(); i++) // de verificat aici laur
 			{
 				if (i == 1)
 				{
-					Assert::AreEqual(100.0, med.get_quantity());
+					Assert::AreEqual(string("Euthyrox"), repos->get_medicina(i).get_name());
+					Assert::AreEqual(100.0, repos->get_medicina(i).get_concentration());
+					Assert::AreEqual(-360.0, repos->get_medicina(i).get_quantity());
+					Assert::AreEqual(0.0, repos->get_medicina(i).get_price());
+
 				}
 			}
-			
+			repos->delete_med("Euthyrox", 100);
+
+			for (int i = 0; i < repos->get_medsize(); i++) // verific daca a ranas ce trebuie in vector
+			{
+				Assert::AreEqual(string("Paracetamol"), repos->get_medicina(i).get_name());
+				Assert::AreEqual(50.0, repos->get_medicina(i).get_concentration());
+				Assert::AreEqual(1000.0, repos->get_medicina(i).get_quantity());
+				Assert::AreEqual(5.0, repos->get_medicina(i).get_price());
+			}
+
 		}
-		*/
+		
 		TEST_METHOD(DeleteTest)
 		{
 			auto repos = new Repository;

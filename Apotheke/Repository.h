@@ -15,9 +15,11 @@ public:
 
 	//vector <Medicine> meds;
 	
-	int get_medsize() { return meds.size(); } /// de verificat aici
+	int get_medsize() { return meds.size(); } /// de verificat aici laur
 	
-	void add_inmeds(int x); /// de veririficat aici
+	void add_inmeds(int x); /// de verificat aici laur
+
+	Medicine get_medicina(int);
 	
 	Repository();
 

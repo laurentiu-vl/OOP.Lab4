@@ -63,7 +63,9 @@ void Controller::add()
 			break;
 		}
 		else if (option == 2)
+
 			add();
+
 		else if (option == 3)
 		{
 			break;
@@ -87,6 +89,7 @@ void Controller::deletes()
 	cin >> c;
 
 	Medicine temp = this->repos.get_element(n, c);
+
 	this->repos.delete_med(n, c);
 
 	int option = -1;
@@ -105,7 +108,9 @@ void Controller::deletes()
 			break;
 		}
 		else if (option == 2)
+
 			deletes();
+
 		else if (option == 3)
 		{
 			break;
@@ -133,6 +138,7 @@ void Controller::update()
 	cin >> p;
 
 	Medicine temp = this->repos.get_element(n, c);
+
 	this->repos.update_med(n, c, p);
 
 	int option = -1;
@@ -150,7 +156,9 @@ void Controller::update()
 			break;
 		}
 		else if (option == 2)
+
 			update();
+
 		else if (option == 3)
 		{
 			break;
@@ -182,7 +190,7 @@ void Controller::search_by_quantity2()
 
 	int qtt;
 
-	cout << "Enter <Quantity: ";
+	cout << "Enter Quantity: ";
 	cin >> qtt;
 
 	bool useless = this->repos.search_by_quantity(qtt);
