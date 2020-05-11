@@ -15,7 +15,7 @@ public:
 
 	//vector <Medicine> meds;
 	
-	int get_medsize() { return meds.size(); } /// de verificat aici laur
+	int get_medsize() { return static_cast<int>(meds.size()); } /// de verificat aici laur
 	
 	void add_inmeds(int x); /// de verificat aici laur
 
@@ -44,7 +44,7 @@ public:
 	bool search_by_quantity(double less_than);
 
 	//LIST ALL MEDS BY PRICE(low to high)
-	Repository group_by_price();
+	vector <Medicine> group_by_price();
 
 	//LIST ALL MEDS
 	void list_all();

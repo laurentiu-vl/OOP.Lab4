@@ -99,7 +99,7 @@ bool Repository::search_by_quantity(double less_than)
 	return state;
 }
 
-Repository Repository::group_by_price()
+vector <Medicine> Repository::group_by_price()
 {
 	for (int i = 0; i < meds.size() - 1; i++)
 		for (int j = i + 1; j < meds.size(); j++)
@@ -110,10 +110,11 @@ Repository Repository::group_by_price()
 				meds[j] = aux;
 			}
 
-	Repository temp;
+	vector <Medicine> temp;
 	for (int i = 0; i < meds.size(); i++)
 	{
-		temp.add_med(meds[i].get_name(), meds[i].get_concentration(), meds[i].get_quantity(), meds[i].get_price());
+		Medicine aux2 = meds[i];
+		temp.push_back(aux2);
 	}
 	return temp;
 }

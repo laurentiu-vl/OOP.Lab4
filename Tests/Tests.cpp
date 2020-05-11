@@ -200,7 +200,7 @@ namespace Tests
 
 		}
 
-		/*TEST_METHOD(GroupByPrice)
+		TEST_METHOD(GroupByPrice)
 		{
 			auto repos = new Repository;
 
@@ -208,11 +208,11 @@ namespace Tests
 			useless = repos->add_med("Paracetamol", 50, 1000, 5);
 			useless = repos->add_med("Nurofen", 70, 10000, 10.5);
 
-			Repository temp = repos->group_by_price();
-			for (int i = 0; i < meds.size(); i++)
+			vector <Medicine> temp = repos->group_by_price();
+			for (int i = 0; i < repos->get_medsize(); i++)
 			{
-				Assert::IsTrue(repos->meds[i].get_price() == temp.meds[i].get_price());
+				Assert::IsTrue(repos->get_medicina(i) == temp[i]);
 			}
-		}*/
+		}
 	};
 }
